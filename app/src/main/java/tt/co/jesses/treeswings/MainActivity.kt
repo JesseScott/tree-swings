@@ -1,4 +1,4 @@
-package com.example.treeswings
+package tt.co.jesses.treeswings
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -15,7 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.treeswings.ui.theme.TreeSwingsTheme
+import tt.co.jesses.treeswings.ui.theme.TreeSwingsTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

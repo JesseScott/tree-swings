@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.treeswings"
+    namespace = "tt.co.jesses.treeswings"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.treeswings"
+        applicationId = "tt.co.jesses.treeswings"
         minSdk = 26
         targetSdk = 34
         versionCode = 1
