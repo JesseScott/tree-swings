@@ -1,4 +1,4 @@
-package com.example.treeswings.ui.theme
+package tt.co.jesses.treeswings.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
