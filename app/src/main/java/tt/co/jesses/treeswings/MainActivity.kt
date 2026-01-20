@@ -12,9 +12,14 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
+import tt.co.jesses.treeswings.data.model.TreeSwing
+import tt.co.jesses.treeswings.ui.TreeSwingsViewModel
 import tt.co.jesses.treeswings.ui.theme.TreeSwingsTheme
 
 class MainActivity : ComponentActivity() {
@@ -35,14 +40,15 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun TreeSwingsApp() {
-    val swings = listOf(
-        "Oak Tree Swing",
-        "Backyard Tire Swing",
-        "Park Bench Swing",
-        "River Rope Swing"
-    )
+fun TreeSwingsApp(
+    viewModel: TreeSwingsViewModel = viewModel(factory = TreeSwingsViewModel.Factory)
+) {
+    val uiState by viewModel.uiState.collectAsState()
+    TreeSwingsList(swings = uiState.swings)
+}
 
+@Composable
+fun TreeSwingsList(swings: List<TreeSwing>) {
     LazyColumn(modifier = Modifier.padding(16.dp)) {
         item {
             Text(
@@ -52,7 +58,7 @@ fun TreeSwingsApp() {
             )
         }
         items(swings) { swing ->
-            SwingItem(name = swing)
+            SwingItem(name = swing.name)
         }
     }
 }
@@ -76,6 +82,10 @@ fun SwingItem(name: String) {
 @Composable
 fun TreeSwingsAppPreview() {
     TreeSwingsTheme {
-        TreeSwingsApp()
+        val sampleSwings = listOf(
+            TreeSwing("1", "Oak Tree Swing"),
+            TreeSwing("2", "Backyard Tire Swing")
+        )
+        TreeSwingsList(swings = sampleSwings)
     }
 }
