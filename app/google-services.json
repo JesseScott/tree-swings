@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "30812474151",
+    "project_id": "tree-swings-3a4a0",
+    "storage_bucket": "tree-swings-3a4a0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:30812474151:android:fbdd73d74d712ee2b9f702",
+        "android_client_info": {
+          "package_name": "tt.co.jesses.treeswings"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDH0wPqOMLr7Trk_po6GDDWxitcEPBXz_E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
