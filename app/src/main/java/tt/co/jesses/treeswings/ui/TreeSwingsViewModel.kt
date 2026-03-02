@@ -14,13 +14,12 @@ import tt.co.jesses.treeswings.data.repository.TreeSwingsRepository
 import tt.co.jesses.treeswings.data.repository.TreeSwingsRepositoryImpl
 
 data class TreeSwingsUiState(
-    val swings: List<TreeSwing> = emptyList()
+    val swings: List<TreeSwing> = emptyList(),
 )
 
 class TreeSwingsViewModel(
-    private val repository: TreeSwingsRepository
+    private val repository: TreeSwingsRepository,
 ) : ViewModel() {
-
     private val _uiState = MutableStateFlow(TreeSwingsUiState())
     val uiState: StateFlow<TreeSwingsUiState> = _uiState.asStateFlow()
 
@@ -36,11 +35,12 @@ class TreeSwingsViewModel(
     }
 
     companion object {
-        val Factory: ViewModelProvider.Factory = viewModelFactory {
-            initializer {
-                val repository = TreeSwingsRepositoryImpl()
-                TreeSwingsViewModel(repository)
+        val Factory: ViewModelProvider.Factory =
+            viewModelFactory {
+                initializer {
+                    val repository = TreeSwingsRepositoryImpl()
+                    TreeSwingsViewModel(repository)
+                }
             }
-        }
     }
 }
