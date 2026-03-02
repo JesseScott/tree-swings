@@ -5,4 +5,12 @@ plugins {
     id("org.jetbrains.kotlin.android") version "1.9.20" apply false
     id("com.google.gms.google-services") version "4.4.4" apply false
     id("com.google.firebase.crashlytics") version "3.0.6" apply false
+    id("org.jlleitschuh.gradle.ktlint") version "12.1.0" apply false
+}
+
+subprojects {
+    apply(plugin = "org.jlleitschuh.gradle.ktlint")
+    configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
+        android.set(true)
+    }
 }

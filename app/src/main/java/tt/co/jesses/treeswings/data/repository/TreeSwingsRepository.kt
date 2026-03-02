@@ -12,7 +12,7 @@ class TreeSwingsRepositoryImpl : TreeSwingsRepository {
             TreeSwing("1", "Oak Tree Swing"),
             TreeSwing("2", "Backyard Tire Swing"),
             TreeSwing("3", "Park Bench Swing"),
-            TreeSwing("4", "River Rope Swing")
+            TreeSwing("4", "River Rope Swing"),
         )
     }
 }

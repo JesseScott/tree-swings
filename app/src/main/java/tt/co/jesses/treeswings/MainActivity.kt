@@ -30,7 +30,7 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    color = MaterialTheme.colorScheme.background,
                 ) {
                     TreeSwingsApp()
                 }
@@ -40,9 +40,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun TreeSwingsApp(
-    viewModel: TreeSwingsViewModel = viewModel(factory = TreeSwingsViewModel.Factory)
-) {
+fun TreeSwingsApp(viewModel: TreeSwingsViewModel = viewModel(factory = TreeSwingsViewModel.Factory)) {
     val uiState by viewModel.uiState.collectAsState()
     TreeSwingsList(swings = uiState.swings)
 }
@@ -54,7 +52,7 @@ fun TreeSwingsList(swings: List<TreeSwing>) {
             Text(
                 text = "My Tree Swings",
                 style = MaterialTheme.typography.headlineMedium,
-                modifier = Modifier.padding(bottom = 16.dp)
+                modifier = Modifier.padding(bottom = 16.dp),
             )
         }
         items(swings) { swing ->
@@ -66,14 +64,15 @@ fun TreeSwingsList(swings: List<TreeSwing>) {
 @Composable
 fun SwingItem(name: String) {
     Card(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(vertical = 8.dp)
+        modifier =
+            Modifier
+                .fillMaxSize()
+                .padding(vertical = 8.dp),
     ) {
         Text(
             text = name,
             modifier = Modifier.padding(16.dp),
-            style = MaterialTheme.typography.bodyLarge
+            style = MaterialTheme.typography.bodyLarge,
         )
     }
 }
@@ -82,10 +81,11 @@ fun SwingItem(name: String) {
 @Composable
 fun TreeSwingsAppPreview() {
     TreeSwingsTheme {
-        val sampleSwings = listOf(
-            TreeSwing("1", "Oak Tree Swing"),
-            TreeSwing("2", "Backyard Tire Swing")
-        )
+        val sampleSwings =
+            listOf(
+                TreeSwing("1", "Oak Tree Swing"),
+                TreeSwing("2", "Backyard Tire Swing"),
+            )
         TreeSwingsList(swings = sampleSwings)
     }
 }
